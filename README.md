@@ -4,6 +4,9 @@
 
 U-Net implementation is taken from [here](https://github.com/milesial/Pytorch-UNet/tree/master/unet) and slightly modified.
 
+For required packages check [this](./environment.yml).
+Install [pytorch](https://pytorch.org/get-started/locally/).
+
 Notebooks of interest are:
 
 [`001-Synthetic-rotors.ipynb`](https://github.com/humanphysiologylab/nn-rotor/blob/master/notebooks/001-Synthetic-rotors.ipynb).
