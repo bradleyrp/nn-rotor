@@ -1,0 +1,14 @@
+name: torch-nightly
+channels:
+  - conda-forge
+dependencies:
+  - python=3.8
+  - ipykernel
+  - pandas
+  - numpy
+  - matplotlib
+  - scikit-learn
+  - tqdm
+  - ipywidgets
+  - plotly
+prefix: /Users/andrey/Work/bin/miniforge3/envs/torch-nightly
