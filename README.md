@@ -20,3 +20,6 @@ Training of the neural network.
 
 [`013-illustration.ipynb`](https://github.com/humanphysiologylab/nn-rotor/blob/master/notebooks/013-illustration.ipynb).
 Illustration of how neural network predicts things.
+
+### Author
+Andrey Pikunov (pikunov@phystech.edu)
