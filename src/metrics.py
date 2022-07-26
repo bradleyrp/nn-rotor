@@ -1,5 +1,21 @@
+import torch
 import numpy as np
 import pandas as pd
+
+σ = torch.sigmoid
+
+
+def accuracy(pred, true):
+    
+    pred = pred.cpu()
+    true = true.cpu()
+        
+    with torch.no_grad():
+        pred = σ(pred) > 0.5
+        
+    score = torch.mean(((pred > 0.5) == (true > 0.5)).float())    
+    
+    return score.item()
 
 
 def find_split_indices(a):
@@ -90,22 +106,5 @@ def calculate_metrics(a, b):
         rows.append(row)
 
     df = pd.DataFrame(rows)
-    if not len(df):
-        return None, None
-
-    columns_metrics = ["iou", "offset", "onset"]
-
-    metrics = {
-        "n_diff": na - nb,
-        
-        "iou_mean": df["iou"].mean(),
-        "iou_std": df["iou"].std(),
-
-        "offset_mean": df["offset"].mean(),
-        "offset_std": df["offset"].std(),
-        
-        "onset_mean": df["onset"].mean(),
-        "onset_std": df["onset"].std()
-    }
     
-    return metrics, df
+    return df
