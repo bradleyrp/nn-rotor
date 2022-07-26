@@ -1,5 +1,7 @@
 # Readme
 
+![U-Net](images/U-Net.png)
+
 U-Net implementation is taken from [here](https://github.com/milesial/Pytorch-UNet/tree/master/unet) and slightly modified.
 
 Notebooks of interest are:
