@@ -10,7 +10,7 @@ Install [pytorch](https://pytorch.org/get-started/locally/).
 Notebooks of interest are:
 
 [`001-Synthetic-rotors.ipynb`](https://github.com/humanphysiologylab/nn-rotor/blob/master/notebooks/001-Synthetic-rotors.ipynb).
-Generation of the synthetic dataset. Original dataset is [here](https://drive.google.com/file/d/1A1YR4p_DB3ssWP8fE33VfHCVQ-54Nh5j/view?usp=sharing).
+Generation of the synthetic dataset. Original dataset used for training is [here](https://drive.google.com/file/d/1A1YR4p_DB3ssWP8fE33VfHCVQ-54Nh5j/view?usp=sharing). Put it [here](./data).
 
 [`015-Draw-synthetic.ipynb`](https://github.com/humanphysiologylab/nn-rotor/blob/master/notebooks/015-Draw-synthetic.ipynb).
 Example of the synthetic track.
