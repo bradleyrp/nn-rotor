@@ -43,7 +43,7 @@ def create_diag(size, n=0):
     return A
 
 
-def predict_1d(pred_2d):
-    M = create_diag(len(pred_2d), 4)
+def predict_1d(pred_2d, n=4):
+    M = create_diag(len(pred_2d), n)
     pred = (pred_2d * M).sum(axis=0)
     return pred

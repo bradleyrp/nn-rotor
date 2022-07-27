@@ -38,13 +38,13 @@ def find_split_indices(a):
     return pairs
 
 
-def calculate_metrics(a, b):
+def calculate_metrics(pred, true):
+        
+    pairs_pred = find_split_indices(pred)
+    pairs_true = find_split_indices(true)
     
-    pairs_a = find_split_indices(a)
-    pairs_b = find_split_indices(b)
-    
-    na = len(pairs_a)
-    nb = len(pairs_b)
+    n_pred = len(pairs_pred)
+    n_true = len(pairs_true)
 
     rows = []
     
@@ -57,36 +57,30 @@ def calculate_metrics(a, b):
         "union": None,
     }
 
-    for pair_a in pairs_a:
+    for pair_pred in pairs_pred:
 
-        i1, i2 = pair_a
-
-        match = True
+        i1, i2 = pair_pred
         
         row = row_template.copy()
+        
+        intersection = -1
 
-        for pair_b in pairs_b:
+        for pair_true in pairs_true:
 
-            j1, j2 = pair_b
-
-            if j2 < i1:
-                continue
-
-            elif j1 > i2:
-                match = False
+            j1, j2 = pair_true
+            
+            intersection = min(i2, j2) - max(i1, j1)
+            
+            if intersection > 0:
                 break
-
-            break
-
-        if (not match) or (nb == 0):
-            rows.append(row_template)
+                
+        if intersection < 0:
             continue
-
-        row["ref"] = match
-
-        intersection = min(i2, j2) - max(i1, j1)
+            rows.append(row_template)
+            
         union = max(i2, j2) - min(j1, i1)
-
+        
+        row["ref"] = True
         row["intersection"] = intersection
         row["union"] = union
 
@@ -106,5 +100,5 @@ def calculate_metrics(a, b):
         rows.append(row)
 
     df = pd.DataFrame(rows)
-    
+
     return df
