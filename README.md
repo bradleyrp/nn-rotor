@@ -7,6 +7,7 @@ Virtual environment:
 # shell
 pip install --user virtualenv
 python -m venv .venv
+. .venv/bin/activate
 pip install -r requirements.txt
 ```
 
