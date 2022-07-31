@@ -25,25 +25,3 @@ def find_activation(name):
     else:
         None
     
-
-def create_diag(size, n=0): 
-    x = np.ones(size)
-    A = np.zeros((size, size))
-    for i in range(-n, n+1):
-        if i == 0:
-            a = np.diag(x, i)
-        elif i < 0:
-            a = np.diag(x[:i], i)
-        else:
-            a = np.diag(x[i:], i)
-        A = A + a
-        
-    A = A / A.sum(axis=0, keepdims=True)
-    
-    return A
-
-
-def predict_1d(pred_2d, n=4):
-    M = create_diag(len(pred_2d), n)
-    pred = (pred_2d * M).sum(axis=0)
-    return pred
