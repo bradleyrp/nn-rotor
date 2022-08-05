@@ -38,6 +38,9 @@ Illustration of how neural network predicts things.
 
 [`017-Predict-pipeline.ipynb`](https://github.com/humanphysiologylab/nn-rotor/blob/master/notebooks/017-Predict-pipeline.ipynb).
 Segmentation of the raw trajectory, the final step of the [rotor search pipeline](https://github.com/humanphysiologylab/heart-meshes#readme). 
+Creates `csv`-files with columns: `t, x, y, z, proba`.
+The latter is the probability of rotor.
+`t` is 10ms discretized time.
 
 # Credits
 
