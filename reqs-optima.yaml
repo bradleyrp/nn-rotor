@@ -80,3 +80,5 @@ dependencies:
     - wcwidth==0.2.5
     - webencodings==0.5.1
     - widgetsnbextension==3.6.1
+    # rbradle8 copied the above from requirements.txt but we were missing numba
+    - numba

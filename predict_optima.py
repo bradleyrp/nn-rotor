@@ -10,6 +10,12 @@ from sklearn.metrics import euclidean_distances
 
 import sys
 
+# rbradle8 hacks some paths
+import glob,re
+if './src/prediction.py' not in glob.glob(os.path.join('.','src/*')):
+    raise Exception('execute from the root of the nn-rotors repo only')
+sys.path.insert(0,os.path.join(os.getcwd(),'src'))
+
 from prediction import (
     predict_1d
 )
@@ -65,6 +71,8 @@ suffix = "-rotor.csv"
 for filename in filenames:
     
     if filename.endswith(suffix):
+        continue
+    if not re.match('^(.*?)\.csv$',filename):
         continue
     
     filename_full = os.path.join(folder_trajectories, filename)
