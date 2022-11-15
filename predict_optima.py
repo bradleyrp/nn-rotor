@@ -56,6 +56,7 @@ model = torch.jit.load(filename_model)
 model.eval();
 
 # rbradle8 takes trajectory files from the command line
+folder_trajectories = sys.argv[1]
 
 filenames = os.listdir(folder_trajectories)
 
