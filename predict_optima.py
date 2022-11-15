@@ -82,5 +82,5 @@ for filename in filenames:
     
     plt.plot(df_interp.t, df_interp.x, zorder=-1, color="0.7")
     plt.scatter(df_interp.t, df_interp.x, c=df_interp.proba, s=4)
-    plt.savefig(filename_full.replace(".csv", '-rotor-redux.png')
+    plt.savefig(filename_full.replace(".csv", '-rotor-redux.png'))
     plt.close()
